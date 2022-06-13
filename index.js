@@ -29,6 +29,8 @@ numBox.onchange = function(event){numbersToggle = numBox.checked}
 
 //Generate random password with settings
 function generatePassword() {
+    //Condition check to see which toggles are on
+    //use the right character set and then call passwordLogic funtion if condition are met
     if (symbolsToggle === true && numbersToggle == true) {
         characters = charSet.upperCase + charSet.lowerCase + charSet.symbols + charSet.numbers;
         passwordLogic();
@@ -57,6 +59,12 @@ function passwordLogic() {
         pswdElTwo.textContent += (characters[randomCharTwo]);
     }
 };
+//Copy password to clipboard
+/* function copyClipboard(){
+    pswdElOne.ariaSelected();
+    navigator.clipboard.writeText(pswdElOne.value);
+    alert("Copied the text: " + copyText.value);
+} */
 
 //STRETCH -->
 // Copy on click

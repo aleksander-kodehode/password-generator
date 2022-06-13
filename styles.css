@@ -81,5 +81,8 @@ hr {
     text-align: center;
     line-height: 20px;
     border-radius: 5px;
-
+}
+.copy-clipboard {
+    position: relative;
+    left: 50px;
 }
