@@ -56,6 +56,12 @@ hr {
     margin: 40px 0;
     border-color: var(--medium-gray);
 }
+.settings-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
 .flex-wrapper {
     display: flex;
     flex-direction: row;

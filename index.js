@@ -8,11 +8,17 @@ const charSet = {
 //combined strings from object before trying to implement options
 let characters = charSet.upperCase + charSet.lowerCase + charSet.symbols + charSet.numbers;
 
-//Storing the output elements for the password
+//Global variables
 let pswdElOne = document.getElementById("pswd-1");
 let pswdElTwo = document.getElementById("pswd-2");
-let pswdLength = 14;
+let slider = document.getElementById("password-length");
+let pswdLength = slider.value
 
+//Get slider value
+slider.onchange = function(event){
+    pswdLength = slider.value
+    console.log(pswdLength)
+}
 
 //Generate random password on button click
 function passwordGenerator() {
@@ -25,7 +31,6 @@ function passwordGenerator() {
         pswdElTwo.textContent += (characters[randomCharTwo]);
     }
 };
-
 
 //STRETCH -->
 // Function that sets password length?
