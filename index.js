@@ -60,11 +60,11 @@ function passwordLogic() {
     }
 };
 //Copy password to clipboard
-/* function copyClipboard(){
+function copyClipboard(){
     pswdElOne.ariaSelected();
     navigator.clipboard.writeText(pswdElOne.value);
     alert("Copied the text: " + copyText.value);
-} */
+}
 
 //STRETCH -->
 // Copy on click
