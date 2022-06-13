@@ -1,0 +1,66 @@
+/* GLOBAL OVERRIDE FOR MARIGNS */
+*   {
+    margin: 0;
+    padding: 0;
+}
+
+/* SETTING GLOBAL VARIABLES FOR COLORS*/
+:root {
+    --dark-blue:  #1F2937;
+    --medium-blue: #273549; 
+    --dark-green: #10B981;
+    --light-green: #55F991;
+    --medium-gray: #b1b1b1;
+}
+/* Global Styling */
+body {
+    background: var(--dark-blue);
+    color: white;
+    font-family: 'Karla', sans-serif;
+}
+.highlight-text {
+    color: var(--light-green);
+}
+p {
+    color: var(--medium-gray);
+}
+h3 {
+    font-size: 2.5em;
+}
+#main-wrapper {
+    width: 550px;
+    margin: 0 auto;
+    padding: 25px 25px;
+}
+.generate-btn {
+    background: var(--dark-green);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin-top: 40px;
+    font-size: 1.5em;
+    color: white;
+}
+.generate-btn:hover{background-color: var(--light-green);color: var(--dark-blue);}
+
+hr {
+    margin: 40px 0;
+    border-color: var(--medium-gray);
+}
+.flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.generated-password {
+    background: var(--medium-blue);
+    color: var(--light-green);
+    padding: 10px 40px;
+    font-size: 1.2em;
+    width: 180px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+
+}
