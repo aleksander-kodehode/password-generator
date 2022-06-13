@@ -1,6 +1,12 @@
-// Array full of possible characters for password generating
-const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
-"/"];
+// Object full of possible characters for password generating
+const charSet = {
+    upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    lowerCase: "abcdefghijklmnopqrstuvwxyz",
+    symbols: "!@#$%^&*()_+~\`|}{[]:;?><,./-=",
+    numbers: "0123456789"
+}
+//combined strings from object before trying to implement options
+let characters = charSet.upperCase + charSet.lowerCase + charSet.symbols + charSet.numbers;
 
 //Storing the output elements for the password
 let pswdElOne = document.getElementById("pswd-1");
@@ -10,10 +16,13 @@ let pswdLength = 14;
 
 //Generate random password on button click
 function passwordGenerator() {
+    pswdElOne.textContent = ""
+    pswdElTwo.textContent = ""
     for (let i = 0; i < pswdLength; i++) {
         let randomChar = Math.floor(Math.random() * characters.length);
-        password += characters.substring(randomChar, randomChar +1);
-        console.log(password)
+        let randomCharTwo = Math.floor(Math.random() * characters.length);
+        pswdElOne.textContent += (characters[randomChar]);
+        pswdElTwo.textContent += (characters[randomCharTwo]);
     }
 };
 

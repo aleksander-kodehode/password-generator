@@ -41,7 +41,16 @@ h3 {
     font-size: 1.5em;
     color: white;
 }
-.generate-btn:hover{background-color: var(--light-green);color: var(--dark-blue);}
+.generate-btn:hover{
+    background-color: var(--light-green);
+    color: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px var(--light-green);
+}
+.generate-btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px var(--light-green);
+}
 
 hr {
     margin: 40px 0;
