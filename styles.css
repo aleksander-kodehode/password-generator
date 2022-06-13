@@ -62,6 +62,10 @@ hr {
     justify-content: flex-start;
     align-items: flex-start;
 }
+.check-wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+}
 .flex-wrapper {
     display: flex;
     flex-direction: row;

@@ -16,17 +16,19 @@
     <h3>Generate a<br/><span class="highlight-text">random password</span></h3>
     <p>Never use an insecure password again!</p>
     <div class="settings-wrapper">
-        <div>
-        <label for="symbols">Include symbols:</label>
-        <input name="symbols" id="symbols" type="checkbox">
-        <label for="numbers">Include number:</label>
-        <input name="numbers" id="numbers" type="checkbox">
+        <div class="check-wrapper">
+            <label for="symbols">Include symbols</label>
+            <input name="symbols" id="symbols" type="checkbox">
+        </div>
+        <div class="check-wrapper">
+            <label for="numbers">Include number</label>
+            <input name="numbers" id="numbers" type="checkbox">
         </div>
         <label for="length">Password length (7-16 characters)</label>
         <input type="range" id="password-length" name="length" value="7" min="7" max="16" oninput="this.nextElementSibling.value = this.value;">
         <output id="range-results">7</output>
     </div>
-    <button class="generate-btn" onclick="passwordGenerator()">Generate password</button>
+    <button class="generate-btn" onclick="generatePassword()">Generate password</button>
     <hr />
     
     <div class="flex-wrapper">
@@ -35,7 +37,6 @@
     </div>
 
 </div>
-
 <script src="index.js"></script>
 </body>
 </html>
