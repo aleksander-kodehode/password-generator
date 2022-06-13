@@ -5,14 +5,16 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 //Storing the output elements for the password
 let pswdElOne = document.getElementById("pswd-1");
 let pswdElTwo = document.getElementById("pswd-2");
+let pswdLength = 14;
 
 
 //Generate random password on button click
 function passwordGenerator() {
-    for (let i = 0; i < characters.length; i++){
+    for (let i = 0; i < pswdLength; i++) {
         let randomChar = Math.floor(Math.random() * characters.length);
-        console.log(characters[randomChar]);
-    };
+        password += characters.substring(randomChar, randomChar +1);
+        console.log(password)
+    }
 };
 
 
@@ -20,3 +22,7 @@ function passwordGenerator() {
 // Function that sets password length?
 // Copy on click
 // Toggle for symbols and numbers?
+    // 0-25 = normal letters
+    // 26-51 = Captilized letters
+    // 52-71 = Numbers
+    // 62-91 = Symbols
