@@ -56,13 +56,26 @@ hr {
     margin: 40px 0;
     border-color: var(--medium-gray);
 }
+.settings-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.check-wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+}
 .flex-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .generated-password {
-    background: var(--medium-blue);
+    background: url(img/copy_white.png) no-repeat;
+    background-size: 13%;
+    background-position: 3px; 
+    background-color: var(--medium-blue) ;
     color: var(--light-green);
     padding: 10px 40px;
     font-size: 1.2em;
@@ -71,5 +84,11 @@ hr {
     text-align: center;
     line-height: 20px;
     border-radius: 5px;
-
+}
+.generated-password:hover{
+    background: url(img/copy_green.png) no-repeat;
+    background-size: 13%;
+    background-position: 3px;
+    background-color: var(--medium-blue) ;
+    color: var(--light-green);
 }
