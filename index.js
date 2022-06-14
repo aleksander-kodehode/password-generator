@@ -59,12 +59,22 @@ function passwordLogic() {
         pswdElTwo.textContent += (characters[randomCharTwo]);
     }
 };
-//Copy password to clipboard
-function copyClipboard(){
-    pswdElOne.ariaSelected();
-    navigator.clipboard.writeText(pswdElOne.value);
-    alert("Copied the text: " + copyText.value);
-}
-
-//STRETCH -->
-// Copy on click
+// Copy to clipboard function
+//Check if the user clicks the password
+pswdElOne.addEventListener("click", () => {
+    //Store the password text in a variable
+    let copyElValue = pswdElOne.textContent
+    //Write the stored variable to clipboard
+    navigator.clipboard.writeText(copyElValue).then(() => {
+        alert("Password copied")
+    })
+});
+//Check if the user clicks the other password
+pswdElTwo.addEventListener("click", () => {
+    //Store the password text in a variable
+    let copyElValue = pswdElTwo.textContent
+    //Write the stored variable to clipboard
+    navigator.clipboard.writeText(copyElValue).then(() => {
+        alert("Password copied")
+    })
+});
