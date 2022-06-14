@@ -92,3 +92,23 @@ hr {
     background-color: var(--medium-blue) ;
     color: var(--light-green);
 }
+.swal-modal {
+    background-color: var(--medium-blue);
+    font-family: 'Karla', sans-serif;
+
+}
+.swal-text {
+    color: white;
+    font-size: 24px;
+    font-family: 'Karla', sans-serif;
+}
+.swal-button {
+    background: var(--dark-green);
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+.swal-button--hover{
+    background-color: var(--light-green);
+    color: var(--dark-blue);
+}

@@ -64,10 +64,10 @@ function passwordLogic() {
 pswdElOne.addEventListener("click", () => {
     //Store the password text in a variable
     let copyElValue = pswdElOne.textContent
-    //Write the stored variable to clipboard
-    navigator.clipboard.writeText(copyElValue).then(() => {
-        alert("Password copied")
-    })
+        //Write the stored variable to clipboard
+        navigator.clipboard.writeText(copyElValue).then(() => {
+            swal("PASSWORD COPIED");
+        })
 });
 //Check if the user clicks the other password
 pswdElTwo.addEventListener("click", () => {
@@ -75,6 +75,6 @@ pswdElTwo.addEventListener("click", () => {
     let copyElValue = pswdElTwo.textContent
     //Write the stored variable to clipboard
     navigator.clipboard.writeText(copyElValue).then(() => {
-        alert("Password copied")
+        swal("PASSWORD COPIED");
     })
 });
