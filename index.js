@@ -7,6 +7,7 @@ const charSet = {
 }
 //charSet.symbols + charSet.numbers;
 //Global variables
+const generateBtn = document.getElementById("generate-btn");
 let pswdElOne = document.getElementById("pswd-1");
 let pswdElTwo = document.getElementById("pswd-2");
 let slider = document.getElementById("password-length");
@@ -19,46 +20,43 @@ let numbersToggle = false
 
 
 //Get slider value
-slider.onchange = function(event){
+slider.onchange = function(){
     //Update var with current value of the slider
     pswdLength = slider.value
 }
 //Get checkbox value if they are changed after site is done loading.
-symBox.onchange = function(event){symbolsToggle = symBox.checked}
-numBox.onchange = function(event){numbersToggle = numBox.checked}
+symBox.onchange = function(){symbolsToggle = symBox.checked}
+numBox.onchange = function(){numbersToggle = numBox.checked}
 
-//Generate random password with settings
-function generatePassword() {
-    //Condition check to see which toggles are on
-    //use the right character set and then call passwordLogic funtion if condition are met
+// Check if button is clicked
+// On click check which condtitions are met and run generatePassword
+generateBtn.addEventListener("click", function(){
     if (symbolsToggle === true && numbersToggle == true) {
         characters = charSet.upperCase + charSet.lowerCase + charSet.symbols + charSet.numbers;
-        passwordLogic();
+        generatePassword(pswdElOne, pswdElTwo);
     } else if (symbolsToggle === true && numbersToggle === false) {
         characters = charSet.upperCase + charSet.lowerCase +charSet.symbols;
-        passwordLogic();
+        generatePassword(pswdElOne, pswdElTwo);
     } else if (symbolsToggle === false && numbersToggle === true) {
         characters = charSet.upperCase + charSet.lowerCase +charSet.numbers;
-        passwordLogic();
+        generatePassword(pswdElOne, pswdElTwo);
     } else {
         characters = charSet.upperCase + charSet.lowerCase
-        passwordLogic();
+        generatePassword(pswdElOne, pswdElTwo);
     };
-};
+});
+
 //Logic to generate password
-function passwordLogic() {
+function generatePassword (outputOne, outputTwo) {
     //Makes sure output fields are empty everytime funciton gets called
     pswdElOne.textContent = ""
     pswdElTwo.textContent = ""
     for (let i = 0; i < pswdLength; i++) {
         //Generate random numbers to pick from string
-        let randomChar = Math.floor(Math.random() * characters.length);
-        let randomCharTwo = Math.floor(Math.random() * characters.length);
-        //Use the random numbers to pick characters from the characters string
-        pswdElOne.textContent += (characters[randomChar]);
-        pswdElTwo.textContent += (characters[randomCharTwo]);
+        outputOne.textContent += (characters[Math.floor(Math.random() * characters.length)]);
+        outputTwo.textContent += (characters[Math.floor(Math.random() * characters.length)]);
     }
-};
+}
 // Copy to clipboard function
 //Check if the user clicks the password
 pswdElOne.addEventListener("click", () => {
