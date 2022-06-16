@@ -57,22 +57,15 @@ function generatePassword (outputOne, outputTwo) {
         outputTwo.textContent += (characters[Math.floor(Math.random() * characters.length)]);
     }
 }
-// Copy to clipboard function
-//Check if the user clicks the password
-pswdElOne.addEventListener("click", () => {
-    //Store the password text in a variable
-    let copyElValue = pswdElOne.textContent
-    //Write the stored variable to clipboard
-    navigator.clipboard.writeText(copyElValue).then(() => {
-        swal("PASSWORD COPIED");
+//Copy to clipboard
+//Grab both password fields, and for each of those items look for user click.
+document.querySelectorAll('.generated-password').forEach(item => {
+    item.addEventListener('click', event => {
+        let copyElValue = item.textContent
+        //Write the password to clipboard
+        navigator.clipboard.writeText(copyElValue).then(() => {
+            //Alertbox, using sweet-alerts
+            swal("PASSWORD COPIED");
+        })
     })
-});
-//Check if the user clicks the other password
-pswdElTwo.addEventListener("click", () => {
-    //Store the password text in a variable
-    let copyElValue = pswdElTwo.textContent
-    //Write the stored variable to clipboard
-    navigator.clipboard.writeText(copyElValue).then(() => {
-        swal("PASSWORD COPIED");
-    })
-});
+})
